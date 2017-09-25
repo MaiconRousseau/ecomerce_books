@@ -4,23 +4,11 @@ import tarefaController from "../controllers/TarefaController.js";
 import lodash from "lodash";
 import moment from "moment";
 import TarefaModel from "../models/TarefaModel.js";
+import * as mdc from "material-components-web/dist/material-components-web";
+window.mdc = mdc;
+mdc.autoInit();
+console.log(mdc.drawer);
 
-
-// console.log(lodash.sortBy(tarefaController.lista(), ["descricao"]));
-// let tarefa = new TarefaModel("Dion Maicon");
-// tarefaController.insert(tarefa);
-// console.log(lodash.sortBy(tarefaController.lista(), ["descricao"]));
-// tarefaController.insert({descricao:"Jesus Salva"});
-// console.log("-----------------------------");
-// tarefaController.update({id:1, descricao:"Jesus"});
-// console.log("-----------------------------");
-// console.log(lodash.sortBy(tarefaController.lista(), ["descricao"]));
-// console.log("-----------------------------");
-// tarefaController.delete({id:0});
-// console.log(lodash.sortBy(tarefaController.lista(), ["descricao"]));
-// console.log("-----------------------------");
-// tarefaController.insert({descricao:"Dion Maicon"});
-// console.log(lodash.sortBy(tarefaController.lista(), ["descricao"]));
 function insert() {
     let descricao = document.getElementById("input_enviar_tarefa").value;
     console.log("CADE a descricao danado?"+ descricao);
@@ -71,21 +59,20 @@ function limparTabela(){
     table.deleteRow(1);
   }
 }
-function ativarModal(){
 
-    document.getElementById("modal").classList.add('is-active');
-}
+var drawerEl = document.querySelector('.mdc-temporary-drawer');
+var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
+var drawer = new MDCTemporaryDrawer(drawerEl);
+document.querySelector('.menu').addEventListener('click', function() {
+  drawer.open = true;
+});
+drawerEl.addEventListener('MDCTemporaryDrawer:open', function() {
+  console.log('Received MDCTemporaryDrawer:open');
+});
+drawerEl.addEventListener('MDCTemporaryDrawer:close', function() {
+  console.log('Received MDCTemporaryDrawer:close');
+});
 
-function desativarModal(){
-
-    document.getElementById("modal").classList.remove('is-active');
-}
-
-
-
-
-
-document.getElementById("button_enviar_tarefa").addEventListener("click", insert);
-document.getElementById("button_modal").addEventListener("click", ativarModal);
-document.getElementById("button_modal_success").addEventListener("click", desativarModal);
-document.getElementById("button_modal_close").addEventListener("click", desativarModal);
+let menu = new mdc.menu.MDCSimpleMenu(document.querySelector('.mdc-simple-menu'));
+// Add event listener to some button to toggle the menu on and off.
+document.querySelector('.button_settings').addEventListener('click', () => menu.open = !menu.open);

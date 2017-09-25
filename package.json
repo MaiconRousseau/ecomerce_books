@@ -1,5 +1,5 @@
 {
-  "name": "topicos_base",
+  "name": "topicos_material",
   "version": "1.0.0",
   "description": "Projeto de Teste",
   "main": "index.js",
@@ -28,6 +28,7 @@
   "dependencies": {
     "babel-preset-env": "^1.6.0",
     "laravel-mix": "^1.4.2",
+    "material-components-web": "^0.21.1",
     "moment": "^2.18.1"
   }
 }
