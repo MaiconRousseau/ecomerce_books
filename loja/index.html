@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Books Shop</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Fontawesome core CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--Slide Show Css -->
+    <link href="assets/ItemSlider/css/main-style.css" rel="stylesheet" />
+    <!-- custom CSS here -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><strong>Book</strong> Store</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Login</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><strong>Admin: </strong></a></li>
+                            <li><a href="http://localhost/ecommerce/loja/usuario"><span class="glyphicon glyphicon-user" style="color:black"></span> Clientes</a> </li>
+                            <li><a href="http://localhost/ecommerce/loja/fornecedor"><span class="glyphicon glyphicon-phone-alt" style="color:black"></span> Fornecedores </a></li>
+                            <li><a href="http://localhost/ecommerce/loja/produto"><span class="glyphicon glyphicon-book" style="color:black"></span> Produtos</a></li>
+                            <li><a href="http://localhost/ecommerce/loja/avaliacao"><span class="glyphicon glyphicon-comment" style="color:black"></span> Avaliações </a></li>
+                            <li class="divider"></li>
+
+                            <li><a href="#"><strong>Logout</strong></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" placeholder="Pesquisar..." class="form-control">
+                    </div>
+                    &nbsp;
+                    <button disabled type="submit" class="btn btn-primary">Procurar</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+              <article class="text">
+                <hgroup>
+                    <h1> Importance of Writing Clean Code </h1>
+                    <h2 style="font-size:16px;"> Autor: <strong> Mohit Rajput </strong><h2>
+                </hgroup>
+
+
+                    <p> <em>“Programming is an art of telling another human what one wants the computer to do.” </em> <br>
+                      <cite> -Donald Knuth</cite>
+                    </p>
+                    <p>
+                      If you speak well, people will love to listen to you. Communication is an art which either can make someone fall in love with you or can give you critics. Similarly in the world of programming. If you write horrible code, you will not be able to tell another programmer why you had written it. It’s a harsh reality that you work under the pressure of deadlines which makes for hastily written code. But keep this fact in mind, a badly written codebase is going to make your life more difficult...
+                      <a href="https://dev.to/mohitrajput987/importance-of-writing-clean-code">Ler mais</a>
+                    </p>
+
+              </article>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="well well-lg offer-box text-center">
+                  Destaque!
+                 </div>
+                <div class="main box-border">
+                    <div id="mi-slider" class="mi-slider">
+                        <ul>
+
+                            <li><a href="#">
+                                <img src="assets/ItemSlider/images/2.jpg" alt="Engenharia de Software Book"><h4>Engenharia de software 1</h4>
+                            </a></li>
+
+                        </ul>
+                        <ul>
+                            <li><a href="#">
+                                <img src="assets/ItemSlider/images/5.jpg" alt="Python Book"><h4>Python</h4>
+                            </a></li>
+                            <li><a href="#">
+                                <img src="assets/ItemSlider/images/6.jpg" alt="The Linux Book"><h4>The Linux </h4>
+                            </a></li>
+
+                        </ul>
+                        <ul>
+                          <li>
+                            <div style="border: 1px solid black;">
+                                <iframe  src="https://www.youtube.com/embed/1IHNc-_u7OI" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                          </li>
+                        </ul>
+                        <nav>
+                            <a href="#">Engenharia de Software</a>
+                            <a href="#">S.O e Python</a>
+                            <a href="#">Clean Code </a>
+                        </nav>
+                    </div>
+
+                </div>
+                <br />
+            </div>
+            <!-- /.col -->
+            <aside class="aside-ofertas">
+
+              <div class="col-md-3 text-center">
+                  <div class=" col-md-12 col-sm-6 col-xs-6" >
+                      <div class="offer-text">
+                          Parceiros
+                      </div>
+                      <div class="thumbnail product-box">
+                          <img src="assets/img/dummyimg.jpg" alt="" />
+                          <div class="caption">
+                              <h3><a href="#">Livro Saraiva </a></h3>
+                              <p><a href="https://www.saraiva.com.br/the-clean-coder-a-code-of-conduct-for-professional-programmers-5296522.html?pac_id=123134&gclid=EAIaIQobChMI5rHzkKvn1gIVFgWRCh2dTgqgEAQYASABEgKIsfD_BwE" target="_blank">Visitar </a></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class=" col-md-12 col-sm-6 col-xs-6">
+                      <div class="offer-text2">
+                          Parceiros
+                      </div>
+                      <div class="thumbnail product-box">
+                          <img src="assets/img/dummyimg.jpg" alt="" />
+                          <div class="caption">
+                              <h3><a href="#">Livro Amazon </a></h3>
+                              <p><a href="https://www.amazon.com.br/C%C3%B3digo-Limpo-Habilidades-Pr%C3%A1ticas-Software/dp/8576082675?tag=goog0ef-20&smid=A1ZZFT5FULY4LN&ascsubtag=aa952146-a418-48bd-a077-ee9616466965" target="_blank">Visitar </a></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+            </aside>
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <a href="#" class="list-group-item active">Tecnologia da Informação
+                    </a>
+                    <ul class="list-group">
+
+                        <li class="list-group-item">Engenharia de software
+                          <span class="label label-primary pull-right">2</span>
+                        </li>
+                        <li class="list-group-item">Big Data
+                      <span class="label label-success pull-right">4</span>
+                        </li>
+                        <li class="list-group-item">Sistemas Operacionais
+                         <span class="label label-danger pull-right">4</span>
+                        </li>
+                        <li class="list-group-item">Redes
+                             <span class="label label-info pull-right">7</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <a href="#" class="list-group-item active list-group-item-success">Contos
+                    </a>
+                    <ul class="list-group">
+
+                        <li class="list-group-item">Ficção
+                             <span class="label label-danger pull-right">102</span>
+                        </li>
+                        <li class="list-group-item">Aventura
+                             <span class="label label-success pull-right">340</span>
+                        </li>
+                        <li class="list-group-item">Novela
+                             <span class="label label-info pull-right">0</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success"><a href="#">Novas Ofertas </a></li>
+                        <li class="list-group-item list-group-item-info"><a href="#">Recem adicionados</a></li>
+
+                    </ul>
+
+                </div>
+
+        </div>
+
+            <div class="col-md-9">
+                <div>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Livros</li>
+                    </ol>
+                </div>
+
+                <div class="row">
+                    <div class="btn-group alg-right-pad">
+                        <button type="button" class="btn btn-default"><strong>500  </strong>Books</button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                Ordenar Produtos &nbsp;
+      <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">By Preço Low</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Preço High</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Popularity</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">By Reviews</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                        <div class="thumbnail product-box">
+                            <img src="assets/img/dummyimg.jpg" alt="" />
+                            <div class="caption">
+                                <h3><a href="#">Livro Clean Code </a></h3>
+                                <p>Preço : <strong>$ 39,90</strong>  </p>
+                                <p><a href="#">Loren Ipsulun </a></p>
+                                <p>Clean Code is a book for amazing developers   </p>
+                                <p><a href="#" class="btn btn-success" role="button">Adicionar ao Carrinho</a> <a href="#" class="btn btn-primary" role="button">Ver Detalhes</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                        <div class="thumbnail product-box">
+                            <img src="assets/img/dummyimg.jpg" alt="" />
+                            <div class="caption">
+                                <h3><a href="#">Livro Clean Code </a></h3>
+                                <p>Preço : <strong>$ 39,90</strong>  </p>
+                                <p><a href="#">Loren Ipsulun </a></p>
+                                <p>Clean Code is a book for amazing developers   </p>
+                                <p><a href="#" class="btn btn-success" role="button">Adicionar ao Carrinho</a> <a href="#" class="btn btn-primary" role="button">Ver Detalhes</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                        <div class="thumbnail product-box">
+                            <img src="assets/img/dummyimg.jpg" alt="" />
+                            <div class="caption">
+                                <h3><a href="#">Livro Clean Code </a></h3>
+                                <p>Preço : <strong>$ 39,90</strong>  </p>
+                                <p><a href="#">Loren Ipsulun </a></p>
+                                <p>Clean Code is a book for amazing developers   </p>
+                                <p><a href="#" class="btn btn-success" role="button">Adicionar ao Carrinho</a> <a href="#" class="btn btn-primary" role="button">Ver Detalhes</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <ul class="pagination alg-right-pad">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <div class="col-md-12 download-app-box text-center">
+        <div class="banners-color">
+            <a href="#" class="btn btn-danger btn-lg">DOWNLOAD <span class="glyphicon glyphicon-download-alt"></span> </a>
+        </div>
+    </div>
+
+    <!--Footer -->
+    <footer>
+      <div class="col-md-12 footer-box">
+      <div class="row">
+
+
+              <div class="col-md-4">
+                  <strong>Nossa localização</strong>
+                    <p>UTPFR Ponta Grossa</p>
+
+                  <details >
+                    <p>
+                        Rua Cel. Pinheiro Machado 255<br />
+                        BR, Brasil<br />
+                        Tel: (42) 9912323-2323<br>
+                    </p>
+                  </details>
+                  2014 utfpr.edu.br | All Right Reserved
+              </div>
+                <hr>
+              <div class="col-md-8 social-box">
+                <div class="col-md-6">
+                  <strong>Siga e curta nossas redes sociais</strong>
+                  <hr>
+                  <a href="#"><i class="fa fa-facebook-square fa-3x "></i></a>
+                  <a href="#"><i class="fa fa-twitter-square fa-3x "></i></a>
+                  <a href="#"><i class="fa fa-google-plus-square fa-3x c"></i></a>
+                  <a href="#"><i class="fa fa-linkedin-square fa-3x "></i></a>
+                  <a href="#"><i class="fa fa-pinterest-square fa-3x "></i></a>
+                  <p>
+                    Desenvolvido para a disciplina de Web
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <h2> Promoção de sábado <h2>
+
+                  <progress max="100" value="60" title="loading"></progress>
+                </div>
+
+              </div>
+
+      </div>
+
+          <hr>
+
+      </div>
+      <!-- /.col -->
+      <div class="col-md-12 end-box ">
+
+            &copy; 2017 | &nbsp; All Rights Reserved |  &nbsp; Email us: dionmaicon@outlook.com
+
+
+      </div>
+      <!-- /.col -->
+      <!--Footer end -->
+    </footer>
+
+
+    <!--Core JavaScript file  -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--bootstrap JavaScript file  -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!--Slider JavaScript file  -->
+    <script src="assets/ItemSlider/js/modernizr.custom.63321.js"></script>
+    <script src="assets/ItemSlider/js/jquery.catslider.js"></script>
+    <script>
+        $(function () {
+
+            $('#mi-slider').catslider();
+
+        });
+		</script>
+</body>
+</html>

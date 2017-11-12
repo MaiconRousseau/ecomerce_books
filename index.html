@@ -1,95 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Material Design</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" charset="utf-8"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/app.css">
 
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" crossorigin="anonymous">
-      <link rel="stylesheet" href="lib/app.css">
-
-    </head>
-<body>
-
-<div class="mdc-simple-menu mdc-simple-menu--open-from-top-right" style="position: absolute;" tabindex="-1" id="demo-menu">
-<ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
-  <li class="mdc-list-item" role="menuitem" tabindex="0">
-    Minha Senha
-  </li>
-  <li class="mdc-list-item" role="menuitem" tabindex="0">
-    Sair
-  </li>
-</ul>
-</div>
-
-    <div>
-      <header class="mdc-toolbar ">
-        <div class="mdc-toolbar__row">
-          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-            <a href="#" class="menu material-icons mdc-toolbar__icon--menu">menu</a>
-            <span class="mdc-toolbar__title">Página Inicial</span>
-          </section>
-          <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-
-
-            <div class="mdc-simple-menu--open mdc-menu-anchor">
-                <mdc-button class="button_settings mdc-button " aria-label="Botão" href="#" style="color:#FFF; font-weight:bold; font-size:17px"> Settings </mdc-button>
-            </div>
-          </div>
-
-          </section>
-        </div>
-
-      </header>
+    <title>Book Store</title>
+  </head>
+  <body >
+    <div id="app" >
+        <router-view></router-view>
     </div>
 
-    <aside id="mdc-temporary" class="mdc-temporary-drawer mdc-typography">
-      <nav class="mdc-temporary-drawer__drawer">
-        <header class="mdc-temporary-drawer__header">
-          <div class="mdc-temporary-drawer__header-content">
-            Menu
-          </div>
-        </header>
-        <nav id="icon-with-text-demo" class="mdc-temporary-drawer__content mdc-list">
-          <a class="mdc-list-item mdc-permanent-drawer--selected" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Caixa de Entrada
-          </a>
-          <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Favoritos
-          </a>
-          <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">bookmark</i>Emails Salvos
-          </a>
-        </nav>
-      </nav>
-    </aside>
-
-    <div class="tab-wrap ">
-
-        <input type="radio" name="tabs" id="tab1" checked>
-        <div class="tab-label-content" id="tab1-content">
-          <label for="tab1">Gerais</label>
-          <div class="tab-content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue. Nam finibus urna eget nisl aliquam, in dictum ligula feugiat. Donec mollis ligula purus, et interdum velit bibendum eget. Aliquam magna diam, tristique eu libero nec, sagittis finibus sapien. Cras a ex ultricies, faucibus elit sagittis, maximus nisi. Donec quis arcu sapien. Aenean risus nibh, varius sed porttitor a, ornare nec leo. Sed vitae lacus in ipsum varius sagittis. Ut in quam cursus, ullamcorper sapien posuere, laoreet elit. Suspendisse interdum, risus ut ultricies scelerisque, nibh est commodo leo, sed tristique nisl odio et turpis. Fusce pellentesque nunc nec arcu feugiat accumsan. Praesent mauris sem, eleifend sit amet tortor in, cursus vehicula arcu. Curabitur convallis sit amet nunc ac feugiat. Sed at risus id diam porta pretium id vel felis. Donec nec dui id nisl hendrerit laoreet eu id odio.</div>
-        </div>
-
-        <input type="radio" name="tabs" id="tab2">
-        <div class="tab-label-content" id="tab2-content">
-          <label for="tab2">Atualizações</label>
-          <div class="tab-content"> Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus. Quisque sed augue porta, facilisis felis vitae, cursus mi. Nullam mollis magna eget tincidunt mollis. Sed suscipit placerat ultricies. Sed eget lorem et ipsum ultricies congue eu a enim. Nam quis ex nec lorem dignissim suscipit eu ut felis. Vivamus molestie felis id purus congue, vel ultrices sem molestie.</div>
-        </div>
-
-        <input type="radio" name="tabs" id="tab3">
-        <div class="tab-label-content" id="tab3-content">
-          <label for="tab3">Promoções</label>
-          <div class="tab-content"> Donec vulputate ante ac ligula vestibulum, id mollis diam commodo. Integer at consequat magna. Sed elit sem, dictum nec porttitor ac, ultrices id enim. Morbi semper eros a enim malesuada, eu finibus erat dictum. Ut vitae orci a odio sagittis malesuada. Cras volutpat vel lorem in tempor. Duis ultricies lectus sit amet tellus vehicula faucibus. Etiam sed leo ac erat tempor feugiat at quis ipsum. Mauris pellentesque nisl lorem, ac finibus sapien sagittis vel. Donec et lobortis est. Vestibulum dignissim ligula nec erat interdum, quis sollicitudin metus pretium. Vestibulum quis dui sapien. Proin commodo justo ac orci elementum molestie. Aliquam mattis orci vitae volutpat commodo.</div>
-        </div>
-
-        <div class="slide"></div>
-
-    </div>
-
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
-    <script src="lib/app.js" type="text/javascript"></script>
-</body>
-
+  </body>
+  <script src="lib/app.js" type="text/javascript"></script>
 </html>

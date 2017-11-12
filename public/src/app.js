@@ -1,79 +1,57 @@
 /* jshint esversion:6*/
 "use strict";
-import tarefaController from "../controllers/TarefaController.js";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import VueMaterial from 'vue-material';
+import BootstrapVue from 'bootstrap-vue';
 import lodash from "lodash";
-import moment from "moment";
-import TarefaModel from "../models/TarefaModel.js";
-import * as mdc from "material-components-web/dist/material-components-web";
-window.mdc = mdc;
-mdc.autoInit();
-console.log(mdc.drawer);
+import 'vue-material/dist/vue-material.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import ToolbarComponent from '../components/toolbar-component.vue';
+import ProductComponent from '../components/product-component.vue';
+import ViewProductsComponent from '../components/view-products-component.vue';
+import HomeComponent from '../components/home-component.vue';
+import AboutComponent from '../components/about-component.vue';
+import ProdutosComponent from '../components/produto/products-component.vue';
 
-function insert() {
-    let descricao = document.getElementById("input_enviar_tarefa").value;
-    console.log("CADE a descricao danado?"+ descricao);
-    let tarefa = new TarefaModel(descricao);
-    document.getElementById("input_enviar_tarefa").value = "";
-    tarefaController.insert(tarefa);
-    atualizarTabela();
-}
+Vue.use(VueRouter);
 
-window.deleteE = function(r) {
-  var i = r.parentNode.parentNode.rowIndex;
-  let userId = r.parentNode.parentNode.id;
-  tarefaController.delete({id:userId});
-  document.getElementById("myTable").deleteRow(i);
-}
+var routes = [
+	{path:'/', component: HomeComponent},
+	{path: '/about', component: AboutComponent},
+	{path: '/produtos', component: ProdutosComponent}
+];
 
-window.updateE = function(r) {
-  let userId = r.parentNode.parentNode.id;
-  // let descricao=  r.parentNode.parentNode.cells[1].innerHTML;
-  let descricao = document.getElementById("update"+userId).value;
-  let tarefa = new TarefaModel(descricao);
-  tarefa.id  = userId;
-  tarefaController.update(tarefa);
-  atualizarTabela();
-}
+var router = new VueRouter({
+	routes: routes
+});
 
-function atualizarTabela(){
-  limparTabela();
-  let table = document.getElementById("myTable");
-  let tarefas = lodash.sortBy(tarefaController.lista(), ["descricao"]);
 
-  for(var i = 1; i < tarefas.length; i++) {
-    let row = table.insertRow(i);
-    let cell1 = row.insertCell(0);
-    let cell2 = row.insertCell(1);
-    let cell3 = row.insertCell(2);
-    let cell4 = row.insertCell(3);
-    cell1.innerHTML = tarefas[i].id;
-    cell2.innerHTML = '<input type="text" id="update'+ tarefas[i].id +'" value="'+ tarefas[i].descricao+'">'; ;
-    cell3.innerHTML = '<input type="button" class="button btn-danger" value="Delete" onclick="deleteE(this)">';
-    cell4.innerHTML = '<input type="button" class="button btn-primary" value="Update" onclick="updateE(this)">';
-    row.id  = tarefas[i].id;
+//Enable vue-material
+Vue.use(VueMaterial);
+
+Vue.material.registerTheme('default', {
+  primary: 'black',
+  accent: 'green',
+  warn: 'red',
+  background: 'white'
+})
+
+//Enable Bootstrap
+Vue.use(BootstrapVue);
+//Register the component
+// Vue.component('toolbar-component', ToolbarComponent);
+// Vue.component('product-component', ProductComponent);
+// Vue.component('view-products-component', ViewProductsComponent);
+Vue.component('home-component', HomeComponent);
+
+window.Eventos = new Vue();
+
+window.Vue = new Vue({
+	el: "#app",
+	router: router,
+  data:()=>{
+    return {admin: false};
   }
-}
-function limparTabela(){
-  let table = document.getElementById("myTable");
-  while(table.rows.length > 1) {
-    table.deleteRow(1);
-  }
-}
-
-var drawerEl = document.querySelector('.mdc-temporary-drawer');
-var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
-var drawer = new MDCTemporaryDrawer(drawerEl);
-
-document.querySelector('.menu').addEventListener('click', function() {
-  drawer.open = true;
 });
-drawerEl.addEventListener('MDCTemporaryDrawer:open', function() {
-
-});
-drawerEl.addEventListener('MDCTemporaryDrawer:close', function() {
-
-});
-
-let menu = new mdc.menu.MDCSimpleMenu(document.querySelector('.mdc-simple-menu'));
-// Add event listener to some button to toggle the menu on and off.
-document.querySelector('.button_settings').addEventListener('click', () => menu.open = !menu.open);
