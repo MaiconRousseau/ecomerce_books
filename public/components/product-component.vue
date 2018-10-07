@@ -6,7 +6,7 @@
       </md-card-media>
 
       <md-card-header>
-      <div alt="Título" class="md-title"><strong>{{name}}</strong> </div>
+      <div alt="Título" style="text-align: center "class="md-title"><strong>{{name}}</strong> </div>
       <div alt="Preço"class="md-subhead"> <strong style="color: red">R$ {{price}}</strong></div>
       </md-card-header>
 
@@ -15,9 +15,9 @@
       <md-button class=" md-accent" alt= "Detalhar" v-on:click="verDetalhes(code_product)"><i class="material-icons">launch</i></md-button>
       </md-card-actions>
 
-      <md-card-content>
-        <p alt="Categoria" >Categoria: {{category_name}}</p>
-        <p alt="Descricao" style="overflow-y: hidden" >Descrição: {{description}} </p>
+      <md-card-content >
+        <p alt="Categoria" > {{category_name}}</p>
+        <p alt="Descricao" style="overflow-y: hidden" > {{description}} </p>
       </md-card-content>
     </md-card>
 

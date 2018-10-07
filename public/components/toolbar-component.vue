@@ -8,14 +8,16 @@
 
 	  	<md-menu>
 			<md-input-container>
-				<i class="material-icons">search</i><md-input type="text" v-on:change="search()" v-model="searchterm"   placeholder="Pesquisar.." ></md-input>
+				<i class="material-icons">search</i><md-input type="text" @change="search()" v-model="searchterm"   placeholder="Pesquisar.." ></md-input>
 			</md-input-container>
 
-			<md-button md-menu-trigger>Área do Cliente</md-button>
+			<md-button v-if="logado" md-menu-trigger>Bem-vindo {{procurarNome()}} </md-button>
+			<md-button v-if="!logado" md-menu-trigger>Área do Cliente</md-button>
 
 		  <md-menu-content>
-		    <md-menu-item>Cadastrar</md-menu-item>
-		    <md-menu-item>Entrar</md-menu-item>
+		    <md-menu-item v-if="!logado" @click="cadastrar()">Cadastrar</md-menu-item>
+		    <md-menu-item v-if="!logado "@click="login()">Entrar</md-menu-item>
+				<md-menu-item v-if="logado"@click="logout()">Sair</md-menu-item>
 		  </md-menu-content>
 		</md-menu>
 	</md-toolbar>
@@ -25,15 +27,31 @@
 
 <script>
 	export default {
+		props: ['logado'],
 		data(){
-			return {searchterm:""}
+			return {
+				searchterm:"",
+			}
 		},
 		methods: {
+			procurarNome(){
+				let user = JSON.parse(localStorage.getItem('login'));
+				return user.username;
+			},
 			openMenu(){
-	      		Eventos.$emit('abrir');
+	      Eventos.$emit('abrir');
 	    },
 			search(){
-				console.log(this.searchterm);
+				Eventos.$emit('pesquisarEmProdutos',this.searchterm);
+			},
+			login(){
+				Eventos.$emit('login');
+			},
+			cadastrar(){
+				Eventos.$emit('cadastrar');
+			},
+			logout(){
+				Eventos.$emit('logout');
 			}
 		}
 	}

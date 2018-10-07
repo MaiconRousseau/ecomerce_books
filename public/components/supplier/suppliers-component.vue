@@ -1,24 +1,24 @@
 <template lang="html">
 
-  <div id="produtos" >
+  <div id="fornecedores" >
     <header style="position: fixed; width: 100% ; z-index: 3;">
         <!--  <toolbar-component v-bind:logado="logado" ></toolbar-component> -->
         <toolbar></toolbar>
     </header >
 
     <menu-component></menu-component>
-    <b-row >
-      <canvas id="space" width="50" height="65">
-          Espaço para publicidade
-      </canvas>
-      <nav class="home-nav" style="text-align: center; position: relative; width: 100%; z-index: 2; border: 1px solid black; display: block;  background-color: #000" >
-        <li  class="menulist" ><router-link to="/">     <span style="color: #FFF">    Home          </span> </router-link></li>
-        <li  class="menulist" ><router-link to="/clientes">     <span style="color: #FFF">      Clientes      </span></router-link></li>
-        <li  class="menulist" ><router-link to="/produtos">     <strong style="color: white">    Produtos      </strong> </router-link></li>
-        <li  class="menulist" ><router-link to="/fornecedores"> <span style="color: #FFF">      Fornecedores  </span></router-link></li>
-      </nav>
-    </b-row>
     <div class="container" style="border: 1px solid black">
+      <b-row >
+        <canvas id="space" width="50" height="65">
+            Espaço para publicidade
+        </canvas>
+        <nav class="home-nav" style="text-align: center; position: relative; width: 100%; z-index: 2; border: 1px solid black; display: block;  background-color: #000" >
+          <li  class="menulist" ><router-link to="/">             <span style="color: #FFF">    Home          </span> </router-link></li>
+          <li  class="menulist" ><router-link to="/clientes">     <span style="color: #FFF">  Clientes      </span></router-link></li>
+          <li  class="menulist" ><router-link to="/produtos">     <span style="color: #FFF">  Produtos      </span> </router-link></li>
+          <li  class="menulist" ><router-link to="/fornecedores"> <strong style="color: white">    Fornecedores  </strong></router-link></li>
+        </nav>
+      </b-row>
       <h1 style="text-align: center">{{title}}</h1>
       <md-button class="md-raised md-primary" @click="modalShow = !modalShow">
           Criar Novo
@@ -30,7 +30,7 @@
         <div class="modal-container">
           <div class="modal-body">
             <slot name="body">
-              <form-product  v-bind:code_product="code_product"></form-product>
+              <form-supplier  v-bind:code_supplier="code_supplier"></form-supplier>
             </slot>
           </div>
         </div>
@@ -38,82 +38,79 @@
     </div>
   </transition>
   <!-- ------------------------------------------------------------------------------------------- -->
-       <md-table md-sort="products">
+       <md-table md-sort="suppliers">
        <md-table-header>
          <md-table-row>
-           <md-table-head md-sort-by="code_product">Código</md-table-head>
+           <md-table-head md-sort-by="code_supplier">Código</md-table-head>
            <md-table-head md-sort-by="name" >Título</md-table-head>
-           <md-table-head md-sort-by="quantity" md-numeric>Estoque (Un)</md-table-head>
-           <md-table-head md-sort-by="price" md-numeric>Preço</md-table-head>
+           <md-table-head md-sort-by="cnpj" >CNPJ</md-table-head>
            <md-table-head >Editar / Deletar</md-table-head>
          </md-table-row>
        </md-table-header>
 
        <md-table-body>
-         <md-table-row v-for="product in products"  :key="product._id">
-           <md-table-cell name="code_product">{{product.code_product}}</md-table-cell>
-           <md-table-cell>{{product.name}}</md-table-cell>
-           <md-table-cell>{{product.quantity}}</md-table-cell>
-           <md-table-cell>{{product.price}}</md-table-cell>
+         <md-table-row v-for="supplier in suppliers"  :key="supplier._id">
+           <md-table-cell name="code_supplier">{{supplier.code_supplier}}</md-table-cell>
+           <md-table-cell>{{supplier.name}}</md-table-cell>
+           <md-table-cell>{{supplier.cnpj}}</md-table-cell>
            <md-table-cell>
-             <md-button class="md-raised md-primary" @click="updateProduct(product.code_product)" md-tolltip="Editar" name="edit_button"><i class="material-icons">mode_edit</i>Update</md-button>
-             <md-button class="md-raised md-warn" md-tooltip="Deletar" @click="deletar(product.name)"name="delete_button"><i class="material-icons">delete</i>Delete</md-button>
+             <md-button class="md-raised md-primary" @click="updateSupplier(supplier.code_supplier)" md-tolltip="Editar" name="edit_button"><i class="material-icons">mode_edit</i>Update</md-button>
+             <md-button class="md-raised md-warn" md-tooltip="Deletar" name="delete_button"><i @click="deletar(supplier.name)" class="material-icons">delete</i>Delete</md-button>
              </md-table-cell>
          </md-table-row>
        </md-table-body>
      </md-table>
     </div>
-    <footer-product></footer-product>
+    <footer-supplier></footer-supplier>
   </div>
 </template>
 
 <script>
-import FormProductComponent from './formproduct-component';
+import FormSupplierComponent from './formsupplier-component';
 import AdminToolbarComponent from '../adminlayout/admintoolbar-component';
 import AdminFooterComponent from '../adminlayout/adminfooter-component';
 import MenuComponent from '../menu-component';
-
 export default {
-  name: "produtos",
+  name: "fornecedores",
   data:()=>({
       modalShow: false,
       message: '',
-      title:"Administrar Produtos",
-      products: [],
-      code_product: null
+      title:"Administrar Fornecedores",
+      suppliers: [],
+      code_supplier: null
   }),
   methods:{
     atualizarLista(){
-      this.axios.get('http://localhost:3000/produtos')
+      this.axios.get('http://localhost:3000/fornecedores')
         .then((response) => {
-          this.products = response.data;
+          this.suppliers = response.data;
         })
         .catch((error) => {
-          console.log("Ocorreu um erro ao buscar produtos"+ error);
+          console.log("Ocorreu um erro ao buscar fornecedores"+ error);
         });
     },
-    updateProduct(code_product){
-      this.code_product = code_product;
+    updateSupplier(code_supplier){
+      this.code_supplier = code_supplier;
       this.modalShow = !this.modalShow;
     },
     cancelar(){
       this.modalShow = !this.modalShow;
-      this.code_product = null;
+      this.code_supplier = null;
     },
     deletar(name){
-      confirm("Deseja realmente excluir o Produto: " + name);
+      confirm("Deseja realmente excluir o Fornecedor: " + name);
     }
   },
   components:{
-    'form-product' : FormProductComponent,
+    'form-supplier' : FormSupplierComponent,
     'toolbar': AdminToolbarComponent,
-    'footer-product': AdminFooterComponent,
+    'footer-supplier': AdminFooterComponent,
     'menu-component': MenuComponent
   },
   created(){
     Eventos.$on('atualizarLista', (message) => {
       this.modalShow = !this.modalShow;
-      this.code_product = null;
+      this.code_supplier = null;
       this.message = message;
       this.atualizarLista();
     });
@@ -122,12 +119,12 @@ export default {
     });
   },
   beforeMount(){
-    this.axios.get('http://localhost:3000/produtos')
+    this.axios.get('http://localhost:3000/fornecedores')
       .then((response) => {
-        this.products = response.data;
+        this.suppliers = response.data;
       })
       .catch((error) => {
-        this.message = "Ocorreu um erro ao buscar produtos"+ error;
+        this.message = "Ocorreu um erro ao buscar em fornecedores"+ error;
       });
       let user = JSON.parse(localStorage.getItem('admin'));
       if(user == null){

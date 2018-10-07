@@ -1,5 +1,5 @@
 <template >
-  <div id="about">
+  <div id="contact">
     <header>
         <toolbar-component v-bind:logado="logado"></toolbar-component>
     </header>
@@ -8,8 +8,8 @@
       <b-row style="margin-top: 3px">
         <nav class="home-nav" style="text-align: center; position: relative; width: 100%; z-index: 2; border: 1px solid black; display: block;  background-color: #285C2B" >
           <li  class="menulist" ><router-link to="/">Home </router-link></li>
-          <li class="menulist" ><router-link  to="/about"> <strong style="color: white">About </strong></router-link></li>
-          <li style="color: white" class="menulist" ><router-link to="/contact">Contact </router-link></li>
+          <li class="menulist" ><router-link  to="/about"> About </router-link></li>
+          <li style="color: white" class="menulist" ><router-link to="/contact"> <strong style="color: white">Contact</strong> </router-link></li>
         </nav>
       </b-row>
 
@@ -17,9 +17,26 @@
           <b-col cols="12">
             <aside class="aside-oferta">
               <main>
-                <h1>Sobre Nós</h1>
+                <form>
+                  <h1>Contato</h1>
+                  <md-input-container>
+                    <md-input placeholder="Nome" type="text"  value="" required></md-input>
+                  </md-input-container>
+                  <md-input-container>
+                  <md-input placeholder="Email" type="email" value="" required></md-input>
+                  </md-input-container>
+                  <md-input-container>
+                      <md-input placeholder="Telefone" v-mask="['(##) ####-####', '(##) #####-####']" type="text" value="" required></md-input>
+                  </md-input-container>
+                  <md-input-container>
+                      <md-input placeholder="Endereço" type="text" value="" required></md-input>
+                  </md-input-container>
+                  <md-input-container>
+                      <md-textarea placeholder="Mensagem" rows="6" required></md-textarea>
+                  </md-input-container>
 
-                <p>Somos uma loja virtual que vende livros de Tecnologia da Informação.</p>
+                  <md-button type="submit" class="md-raised md-primary">Send</md-button>
+              </form>
               </main>
 
             </aside>
@@ -46,7 +63,7 @@ import FooterComponent from './footer-component';
 import MenuComponent from './menu-component';
 
 export default {
-  name: 'about',
+  name: 'contact',
   data:()=>({
     logado: false
   }),
