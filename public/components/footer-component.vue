@@ -10,16 +10,16 @@
 
 
           <strong>Nossa localização</strong>
-            <p>UTPFR Ponta Grossa</p>
+            <p>Ponta Grossa</p>
 
           <details >
             <p>
-                Rua Cel. Pinheiro Machado 255<br />
+                Av. Julia Wanderley, 1190<br />
                 BR, Brasil<br />
-                Tel: (42) 9912323-2323<br>
+                Tel: (54) 99145-1740<br>
             </p>
           </details>
-          2014 utfpr.edu.br | All Right Reserved
+          2018 tryus.software | All Right Reserved
           </div>
         </b-col >
 
@@ -28,12 +28,12 @@
               <strong>Siga e curta nossas redes sociais</strong>
               <hr>
               <a href="#"><i class="fa fa-facebook-square fa-3x "></i></a>
-              <a href="#"><i class="fa fa-twitter-square fa-3x "></i></a>
+              <a href="https://twitter.com/_dionmaicon"><i class="fa fa-twitter-square fa-3x "></i></a>
               <a href="#"><i class="fa fa-google-plus-square fa-3x c"></i></a>
-              <a href="#"><i class="fa fa-linkedin-square fa-3x "></i></a>
+              <a href="https://linkedin.com/in/dionmaicon"><i class="fa fa-linkedin-square fa-3x "></i></a>
               <a href="#"><i class="fa fa-pinterest-square fa-3x "></i></a>
               <p>
-                Desenvolvido para a disciplina de Web
+                Desenvolvido por @dionmaicon
               </p>
 
           </b-col>
@@ -42,7 +42,7 @@
       </b-row>
       <b-row>
         <b-col style="text-align: center; color: #FFF" cols="12">
-                &copy; 2017 | &nbsp; All Rights Reserved |  &nbsp; Email us: dionmaicon@tryus.software
+                &copy; 2018 | &nbsp; All Rights Reserved |  &nbsp; Email us: dionmaicon@outlook.com
         </b-col>
       </b-row>
   </b-col>
