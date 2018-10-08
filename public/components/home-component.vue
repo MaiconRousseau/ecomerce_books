@@ -128,7 +128,7 @@
                 </md-boards>
             </aside>
           </b-col  >
-          <b-col cols="3" >
+          <b-col cols="3"  class="hide-mobile">
             <aside class="aside-adsense"style="text-align: center">
 
                 <h3 class="md-subtitle" >
@@ -136,14 +136,14 @@
                 </h3>
                 <div class="thumbnail product-box">
                   <a href="https://github.com/dionmaicon" target="_blank">
-                    <img src="loja/assets/img/github.png"  target="_blank" alt="GitHub Banner" />
+                    <img src="images/github.png"  target="_blank" alt="GitHub Banner" />
                   </a>
                   <hr>
                   <div class="">
 
                   </div>
                 <a href="https://www.americanas.com.br" target="_blank" >
-                  <img src="loja/assets/img/americanasblack.png"   alt="Americanas Banner" />
+                  <img src="images/americanasblack.png"   alt="Americanas Banner" />
                 </a>
                 </div>
             </aside>
@@ -349,6 +349,12 @@ export default {
    box-shadow: 0 6px 14px 0 #666;
    transform: scale(1.05);
    color: black;
+}
+
+@media screen and (max-device-width: 480px) {
+  .hide-mobile {
+    display: none;
+  }
 }
 
 </style>
